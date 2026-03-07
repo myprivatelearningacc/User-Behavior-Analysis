@@ -30,12 +30,12 @@ Ràng buộc: **không sử dụng LLM > 0.5B tham số**, tuân thủ quy tắc
   - `CNN submission.csv`: Submission từ mô hình CNN.  
 - `new_eda.ipynb`: EDA, profiling hành vi và phân tích bất thường.
 - **pipeline_data/**: Thư mục chứa các artifact trung gian của pipeline dữ liệu được tạo sau bước EDA và preprocessing. Các file trong thư mục này giúp chuẩn hóa dữ liệu đầu vào cho quá trình huấn luyện mô hình và đảm bảo pipeline có thể tái tạo nhất quán.
-  - sequences.pkl: Lưu trữ chuỗi hành động của người dùng sau khi xử lý, bao gồm ba tập train, val, test. Mỗi phần tử là một danh sách token integer biểu diễn sequence hành vi.
-  - meta.pkl: Metadata của dataset, bao gồm danh sách cột metadata (meta_cols), cột sequence (seq_cols), chiều dài chuỗi p95 (max_len_p95) và kích thước tập train (N_train). Thông tin này được sử dụng để cấu hình input của mô hình.
-  - encoders.pkl: Các LabelEncoder đã được fit trên tập train cho từng target attribute (attr_1 → attr_6). File này cho phép chuyển đổi nhãn giữa dạng số và dạng gốc trong quá trình training và inference.
-  - token_stats.pkl: Thống kê token trong chuỗi hành động, bao gồm tần suất token (counter) và phân loại token theo mức độ xuất hiện (very_common, common, rare). Các thống kê này phục vụ phân tích phân phối hành vi và thiết kế embedding.
-  - Y_train_enc.csv, Y_val_enc.csv: Nhãn mục tiêu sau khi được encode thành số nguyên để dùng trực tiếp trong quá trình huấn luyện mô hình.
-  - Y_train_orig.csv, Y_val_orig.csv: Nhãn gốc trước khi encode, được lưu lại để tiện kiểm tra và chuyển đổi kết quả dự đoán về dạng label ban đầu.
+  - `sequences.pkl`: Lưu trữ chuỗi hành động của người dùng sau khi xử lý, bao gồm ba tập train, val, test. Mỗi phần tử là một danh sách token integer biểu diễn sequence hành vi.
+  - `meta.pkl`: Metadata của dataset, bao gồm danh sách cột metadata (meta_cols), cột sequence (seq_cols), chiều dài chuỗi p95 (max_len_p95) và kích thước tập train (N_train). Thông tin này được sử dụng để cấu hình input của mô hình.
+  - `encoders.pkl`: Các LabelEncoder đã được fit trên tập train cho từng target attribute (attr_1 → attr_6). File này cho phép chuyển đổi nhãn giữa dạng số và dạng gốc trong quá trình training và inference.
+  - `token_stats.pkl`: Thống kê token trong chuỗi hành động, bao gồm tần suất token (counter) và phân loại token theo mức độ xuất hiện (very_common, common, rare). Các thống kê này phục vụ phân tích phân phối hành vi và thiết kế embedding.
+  - `Y_train_enc.csv`, `Y_val_enc.csv`: Nhãn mục tiêu sau khi được encode thành số nguyên để dùng trực tiếp trong quá trình huấn luyện mô hình.
+  - `Y_train_orig.csv`, `Y_val_orig.csv`: Nhãn gốc trước khi encode, được lưu lại để tiện kiểm tra và chuyển đổi kết quả dự đoán về dạng label ban đầu.
 
 ### 3. Các mô hình và kết luận (theo rubric)
 - **EDA & Tiền xử lý (35%)**
